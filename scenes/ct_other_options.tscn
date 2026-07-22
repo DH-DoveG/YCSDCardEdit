@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bkcvf10e5wbii"]
+
+[ext_resource type="Script" uid="uid://0ut5k2c17kl2" path="res://scenes/ct_other_options.gd" id="1_i3bde"]
+[ext_resource type="PackedScene" uid="uid://boa1by07nnbs1" path="res://components/ct_options/append_item_box.tscn" id="2_i3bde"]
+[ext_resource type="PackedScene" uid="uid://1vbjo2fkdjd7" path="res://scenes/text_box.tscn" id="2_nup68"]
+[ext_resource type="PackedScene" uid="uid://sx0edfagsejm" path="res://components/ct_options/image_choose.tscn" id="3_nup68"]
+[ext_resource type="PackedScene" uid="uid://cmigydmvlir8y" path="res://scenes/text_mul_box.tscn" id="4_nup68"]
+
+[node name="Control" type="VBoxContainer" unique_id=1976865191]
+custom_minimum_size = Vector2(528, 1400)
+custom_maximum_size = Vector2(528, -1)
+offset_right = 528.0
+offset_bottom = 1400.0
+script = ExtResource("1_i3bde")
+
+[node name="CardBase" type="VBoxContainer" parent="." unique_id=242937272]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="CardBase" unique_id=1677181869]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "卡片基础信息"
+
+[node name="CardType" type="HBoxContainer" parent="CardBase" unique_id=2053153554]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="CardBase/CardType" unique_id=1042976840]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "种   类"
+
+[node name="LineEdit" type="OptionButton" parent="CardBase/CardType" unique_id=72138525]
+custom_maximum_size = Vector2(-1, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+selected = 1
+item_count = 5
+popup/item_0/text = "精灵卡"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "战术卡"
+popup/item_1/id = 1
+popup/item_2/text = "设备卡"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "装备卡"
+popup/item_3/id = 3
+popup/item_4/text = "场地卡"
+popup/item_4/id = 4
+
+[node name="CardName" parent="CardBase" unique_id=1218282564 instance=ExtResource("2_nup68")]
+layout_mode = 2
+
+[node name="CardLv" parent="CardBase" unique_id=660411186 instance=ExtResource("2_nup68")]
+layout_mode = 2
+title = "等   级"
+
+[node name="CardTagSlot1" parent="CardBase" unique_id=1327639209 instance=ExtResource("2_i3bde")]
+layout_mode = 2
+title = "特征槽1"
+
+[node name="CardTagSlot2" parent="CardBase" unique_id=503674377 instance=ExtResource("2_i3bde")]
+layout_mode = 2
+title = "特征槽2"
+
+[node name="CardEffect" parent="CardBase" unique_id=1737782001 instance=ExtResource("4_nup68")]
+layout_mode = 2
+
+[node name="CardImage" parent="CardBase" unique_id=1524216688 instance=ExtResource("3_nup68")]
+layout_mode = 2
+title = "卡   图"
+rr_type = 1

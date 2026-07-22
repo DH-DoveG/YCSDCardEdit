@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://diww4f0f34w2x"]
+
+[ext_resource type="Script" uid="uid://bi5hnfd0gl765" path="res://scripts/card_info_panel.gd" id="1_5mjar"]
+[ext_resource type="Texture2D" uid="uid://kfl7flq5dml0" path="res://assets/icons/ampStories.png" id="1_cgip5"]
+
+[node name="CardInfoPanel" type="ColorRect" unique_id=1619048274]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 224.0
+grow_horizontal = 2
+color = Color(7.460266e-07, 0.321296, 0.4353952, 1)
+script = ExtResource("1_5mjar")
+
+[node name="CR" type="ColorRect" parent="." unique_id=1758444656]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0.57254905, 0.7647059, 1)
+
+[node name="Btn" type="TextureButton" parent="." unique_id=992208407]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = -128.0
+grow_horizontal = 0
+
+[node name="ColorRect3" type="ColorRect" parent="Btn" unique_id=1954805936]
+layout_mode = 1
+offset_right = 45.237854
+offset_bottom = 45.237854
+rotation = -0.7853982
+mouse_filter = 1
+color = Color(5.583167e-06, 0.5737328, 0.76437527, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Btn" unique_id=1127203165]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 128.0
+grow_horizontal = 0
+mouse_filter = 1
+color = Color(0, 0.57254905, 0.7647059, 1)
+
+[node name="Label" type="Label" parent="Btn" unique_id=386057595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "卡
+片"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Btn" unique_id=404953229]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 32.0
+grow_horizontal = 2
+texture = ExtResource("1_cgip5")
+expand_mode = 1
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=929330763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="M" type="MarginContainer" parent="Scroll" unique_id=750739615]
+custom_minimum_size = Vector2(568, 0)
+custom_maximum_size = Vector2(568, -1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+
+[node name="Label" type="Label" parent="." unique_id=617299905]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 144.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 24
+text = "卡片类型"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardTypeChoose" type="OptionButton" parent="." unique_id=774236855]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 24
+item_count = 2
+popup/item_0/text = "精灵卡"
+popup/item_0/id = 0
+popup/item_1/text = "其他"
+popup/item_1/id = 1
+
+[node name="UsedChange" type="Button" parent="." unique_id=1129905073]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -232.0
+offset_top = 16.0
+offset_right = -72.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "应用更改"
+
+[connection signal="pressed" from="Btn" to="." method="_on_btn_pressed"]
+[connection signal="item_selected" from="CardTypeChoose" to="." method="_on_card_type_choose_item_selected"]
+[connection signal="pressed" from="UsedChange" to="." method="_on_used_change_pressed"]

@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="YcsdCardEdit"
+run/main_scene="uid://t4rpy2e720xj"
+config/features=PackedStringArray("4.7", "Mobile")
+run/low_processor_mode=true
+config/icon="res://icon.svg"
+
+[autoload]
+
+Config="*uid://dtnvquwryvkax"
+ToastX="*uid://bbslyn8croajl"
+
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=1152
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+window/ios/allow_high_refresh_rate=false
+window/ios/hide_home_indicator=false
+window/ios/hide_status_bar=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotGetImage/plugin.cfg", "res://addons/font_auto_size_labels/plugin.cfg", "res://addons/material_icons_importer/plugin.cfg", "res://addons/toastx/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://cdfgwyh8jdk3l"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

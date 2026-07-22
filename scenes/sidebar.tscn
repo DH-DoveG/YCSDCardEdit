@@ -1,0 +1,419 @@
+[gd_scene format=3 uid="uid://cbl6b321h6pp5"]
+
+[ext_resource type="Texture2D" uid="uid://cocibpbl1oqkp" path="res://assets/icons/tableRows.png" id="1_1nfj0"]
+[ext_resource type="Script" uid="uid://daq4wjr3mcmjt" path="res://scripts/sidebar.gd" id="1_lu6np"]
+[ext_resource type="PackedScene" uid="uid://4wwxe5oap0p6" path="res://card_template/ct_other.tscn" id="3_26ftg"]
+
+[node name="Sidebar" type="ColorRect" unique_id=181068782]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 424.0
+grow_vertical = 2
+color = Color(1.1551381e-06, 0.4220781, 0.56883585, 1)
+script = ExtResource("1_lu6np")
+
+[node name="Btn" type="TextureButton" parent="." unique_id=1893028763]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 0
+
+[node name="ColorRect2" type="ColorRect" parent="Btn" unique_id=216831581]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 45.237854
+offset_bottom = 45.237854
+grow_horizontal = 0
+rotation = 0.7853982
+mouse_filter = 1
+color = Color(0, 0.57254905, 0.7647059, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Btn" unique_id=2093990289]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 64.0
+grow_horizontal = 0
+mouse_filter = 1
+color = Color(0, 0.57254905, 0.7647059, 1)
+
+[node name="Label" type="Label" parent="Btn" unique_id=2054982827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "菜单"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Btn" unique_id=1443327234]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_1nfj0")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1755912518]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+mouse_filter = 1
+color = Color(0, 0.57254905, 0.7647059, 1)
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=1020223976]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 384.0
+offset_bottom = 648.0
+
+[node name="VBox" type="VBoxContainer" parent="Scroll" unique_id=830875052]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Export" type="TextureButton" parent="Scroll/VBox" unique_id=2062027992]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/Export" unique_id=118272506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.21568628)
+
+[node name="Label" type="Label" parent="Scroll/VBox/Export" unique_id=1739781381]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "导出卡片"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Create" type="TextureButton" parent="Scroll/VBox" unique_id=1486562665]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/Create" unique_id=529191202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 0.21568628)
+
+[node name="Label" type="Label" parent="Scroll/VBox/Create" unique_id=1718716431]
+self_modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "创建卡片"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardList" type="TextureButton" parent="Scroll/VBox" unique_id=1896737984]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/CardList" unique_id=228698973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 0.21568628)
+
+[node name="Label" type="Label" parent="Scroll/VBox/CardList" unique_id=1771847292]
+self_modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "卡片列表"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Save" type="TextureButton" parent="Scroll/VBox" unique_id=1945280487]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/Save" unique_id=166071825]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.21568628, 0.54901963, 0.6627451, 1)
+
+[node name="Label" type="Label" parent="Scroll/VBox/Save" unique_id=579858701]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "保存文件"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveAs" type="TextureButton" parent="Scroll/VBox" unique_id=586259544]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/SaveAs" unique_id=901293797]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 0.21568628)
+
+[node name="Label" type="Label" parent="Scroll/VBox/SaveAs" unique_id=1179500538]
+self_modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "另存文件"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Open" type="TextureButton" parent="Scroll/VBox" unique_id=30681772]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/Open" unique_id=1387627519]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.21568628, 0.54901963, 0.6627451, 1)
+
+[node name="Label" type="Label" parent="Scroll/VBox/Open" unique_id=1753692369]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "打开文件"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Setting" type="TextureButton" parent="Scroll/VBox" unique_id=1472015998]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/Setting" unique_id=1441311033]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 0.21568628)
+
+[node name="Label" type="Label" parent="Scroll/VBox/Setting" unique_id=974430580]
+self_modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "程序设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Setting2" type="TextureButton" parent="Scroll/VBox" unique_id=120527344]
+visible = false
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Scroll/VBox/Setting2" unique_id=353650397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 0.21568628)
+
+[node name="Label" type="Label" parent="Scroll/VBox/Setting2" unique_id=2071671778]
+self_modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Debug" type="RichTextLabel" parent="." unique_id=558424816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 840.0
+offset_right = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+
+[node name="ExportSubViewport" type="SubViewportContainer" parent="." unique_id=1916412100]
+visible = false
+layout_mode = 0
+offset_top = 1400.0
+offset_right = 540.0
+offset_bottom = 2156.0
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="ExportSubViewport" unique_id=1325025041]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+msaa_2d = 3
+use_taa = true
+size = Vector2i(2160, 3024)
+size_2d_override = Vector2i(540, 756)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="CTOther" parent="ExportSubViewport/SubViewport" unique_id=960412187 instance=ExtResource("3_26ftg")]
+
+[node name="ExportImage" type="FileDialog" parent="." unique_id=565899790]
+oversampling_override = 1.0
+access = 2
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="OpenYCC" type="FileDialog" parent="." unique_id=849937331]
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+access = 2
+root_subfolder = "/storage/emulated/0/Documents/YcsdCardEdit/"
+filters = PackedStringArray("*.ycc")
+show_hidden_files = true
+use_native_dialog = true
+
+[node name="SaveYCC" type="ConfirmationDialog" parent="." unique_id=1786671250]
+oversampling_override = 1.0
+title = "保存卡片文件"
+initial_position = 1
+size = Vector2i(500, 125)
+ok_button_text = " 保    存 "
+cancel_button_text = "  取    消  "
+
+[node name="Control" type="Control" parent="SaveYCC" unique_id=1594389748]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 77.0
+
+[node name="LineEdit" type="LineEdit" parent="SaveYCC/Control" unique_id=58245412]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 484.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 24
+placeholder_text = "输入卡片文件名称"
+
+[node name="Label" type="Label" parent="." unique_id=347297792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 583.5
+offset_right = -8.0
+offset_bottom = -448.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "保存的文件默认在：
+Documents/YcsdCardEdit/CardSet/
+文件后缀：（暂定，本质zip）
+.ycc  (YCSD Card)"
+
+[connection signal="pressed" from="Btn" to="." method="_on_btn_pressed"]
+[connection signal="pressed" from="Scroll/VBox/Export" to="." method="_on_export_pressed"]
+[connection signal="pressed" from="Scroll/VBox/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Scroll/VBox/Open" to="." method="_on_open_pressed"]
+[connection signal="file_selected" from="ExportImage" to="." method="_on_export_image_file_selected"]
+[connection signal="file_selected" from="OpenYCC" to="." method="_on_open_ycc_file_selected"]
+[connection signal="confirmed" from="SaveYCC" to="." method="_on_save_ycc_confirmed"]

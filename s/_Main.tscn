@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c4fsc0cb632r"]
+
+[ext_resource type="Script" uid="uid://bnnh1ctg4wnl4" path="res://s/_Main.gd" id="1_gnd1c"]
+
+[node name="_Main" type="Node2D" unique_id=1283698117]
+script = ExtResource("1_gnd1c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=606955251]
+offset_right = 400.0
+offset_bottom = 395.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonGallery" type="Button" parent="VBoxContainer" unique_id=1080484658]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Get image from gallery"
+
+[node name="ButtonGalleryMulti" type="Button" parent="VBoxContainer" unique_id=1569690062]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Get images from gallery"
+
+[node name="ButtonCamera" type="Button" parent="VBoxContainer" unique_id=721913350]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Get image from camera"
+
+[node name="Images" type="GridContainer" parent="VBoxContainer" unique_id=45800367]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureRect" parent="VBoxContainer/Images" unique_id=1177362576]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 3
+
+[node name="ButtonSetOptions" type="Button" parent="VBoxContainer" unique_id=257718688]
+layout_mode = 2
+text = "Set image size to 200*100 but keep aspect ratio"
+
+[node name="ButtonSetOptions2" type="Button" parent="VBoxContainer" unique_id=163431904]
+layout_mode = 2
+text = "Set auto_rotate_image option to true"
+
+[node name="ButtonSetOptionsUseFrontCamera" type="Button" parent="VBoxContainer" unique_id=232998474]
+layout_mode = 2
+text = "Set use_front_camera to true"
+
+[node name="ButtonResetOptions" type="Button" parent="VBoxContainer" unique_id=1804558939]
+layout_mode = 2
+text = "Set options to default"
+
+[node name="CheckButtonUsePhotoPicker" type="CheckButton" parent="VBoxContainer" unique_id=48863899]
+visible = false
+layout_mode = 2
+button_pressed = true
+text = "Use androidx Photo picker
+(Not yet implemented!)"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="." unique_id=21468481]
+
+[connection signal="pressed" from="VBoxContainer/ButtonGallery" to="." method="_on_ButtonGallery_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonGalleryMulti" to="." method="_on_ButtonGalleryMulti_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCamera" to="." method="_on_ButtonCamera_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSetOptions" to="." method="_on_ButtonSetOptions_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSetOptions2" to="." method="_on_ButtonSetOptions2_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSetOptionsUseFrontCamera" to="." method="_on_ButtonSetOptionsUseFrontCamera_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonResetOptions" to="." method="_on_ButtonResetOptions_pressed"]
+[connection signal="toggled" from="VBoxContainer/CheckButtonUsePhotoPicker" to="." method="_on_check_button_use_photo_picker_toggled"]

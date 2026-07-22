@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ebnieopwmmi3"]
+
+[ext_resource type="PackedScene" uid="uid://bpqdigr683rof" path="res://components/ct_options/number_box.tscn" id="1_f5hqf"]
+[ext_resource type="Script" uid="uid://7hbgca27dtfe" path="res://scenes/grid_range.gd" id="1_x7feg"]
+
+[node name="GridRange" type="VBoxContainer" unique_id=731181779]
+custom_minimum_size = Vector2(528, 617)
+custom_maximum_size = Vector2(528, 617)
+script = ExtResource("1_x7feg")
+
+[node name="Label" type="Label" parent="." unique_id=1083517480]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "攻击范围"
+
+[node name="Range" parent="." unique_id=777352347 instance=ExtResource("1_f5hqf")]
+layout_mode = 2
+size_flags_horizontal = 3
+title = "网格尺寸"
+
+[node name="Grid" type="GridContainer" parent="." unique_id=646758961]
+custom_minimum_size = Vector2(0, 528)
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0

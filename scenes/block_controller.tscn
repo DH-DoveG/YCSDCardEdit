@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://cs6qj0u0xa2ef"]
+
+[ext_resource type="Script" uid="uid://dlyew4akhvq5l" path="res://scenes/block_controller.gd" id="1_6qv4t"]
+[ext_resource type="Texture2D" uid="uid://cgvmc7e1rptb" path="res://assets/三角形.png" id="1_fgsd8"]
+
+[node name="BlockController" type="TextureButton" unique_id=1516428767]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6qv4t")
+
+[node name="None" type="ColorRect" parent="." unique_id=894694885]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="None" unique_id=1308139088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="WhiteBlock" type="ColorRect" parent="." unique_id=1952897124]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="WhiteBlock" unique_id=147316247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="RedBlock" type="ColorRect" parent="." unique_id=1861249816]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="RedBlock" unique_id=1055573911]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="HitBlock" type="ColorRect" parent="." unique_id=77226252]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="HitBlock" unique_id=1324623595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="TextureRect" type="TextureRect" parent="HitBlock" unique_id=507401092]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_fgsd8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BlackBlock" type="ColorRect" parent="." unique_id=1746066670]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="BlackBlock" unique_id=255199877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+border_width = 2.0
+editor_only = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

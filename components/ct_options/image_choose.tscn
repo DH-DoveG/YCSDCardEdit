@@ -1,0 +1,301 @@
+[gd_scene format=3 uid="uid://sx0edfagsejm"]
+
+[ext_resource type="Script" uid="uid://blaykpf80jbum" path="res://components/ct_options/image_choose.gd" id="1_pgpn6"]
+[ext_resource type="PackedScene" uid="uid://bodrmog7eial4" path="res://get_gallery_image.tscn" id="2_sfwrq"]
+
+[node name="ImageChoose" type="Control" unique_id=1524216688]
+custom_minimum_size = Vector2(0, 576)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 528.0
+offset_bottom = 576.0
+mouse_filter = 2
+script = ExtResource("1_pgpn6")
+
+[node name="ImageStatck" type="Control" parent="." unique_id=278379069]
+clip_contents = true
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 42.0
+offset_right = 518.0
+offset_bottom = 286.0
+mouse_filter = 2
+
+[node name="1" type="TextureRect" parent="ImageStatck" unique_id=1334784483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RR" type="ReferenceRect" parent="." unique_id=1618975553]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 520.0
+offset_bottom = 288.0
+mouse_filter = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="RR2" type="ReferenceRect" parent="." unique_id=1364457831]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 56.0
+offset_right = 342.0
+offset_bottom = 274.4
+mouse_filter = 2
+border_color = Color(1, 0, 0, 0.49411765)
+border_width = 4.0
+editor_only = false
+
+[node name="RR3" type="ReferenceRect" parent="." unique_id=1541980453]
+visible = false
+layout_mode = 0
+offset_left = 186.0
+offset_top = 87.0
+offset_right = 342.0
+offset_bottom = 243.0
+mouse_filter = 2
+border_color = Color(1, 0, 0, 0.49411765)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="." unique_id=1810575713]
+layout_mode = 0
+offset_right = 528.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 24
+text = "图片"
+
+[node name="Options" type="VBoxContainer" parent="." unique_id=1086022290]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -224.0
+offset_right = 144.0
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="ImageChoose" type="Button" parent="Options" unique_id=311240081]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 22
+text = "图像选择"
+
+[node name="RRType" type="Button" parent="Options" unique_id=1939532980]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 22
+text = "红框类型"
+
+[node name="SizeChange" type="Button" parent="Options" unique_id=459681263]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 22
+text = "尺寸调整"
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=249424938]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -376.0
+offset_top = -224.0
+offset_right = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ImageChooseOption" type="TextureButton" parent="Scroll" unique_id=1054606695]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Scroll/ImageChooseOption" unique_id=1800910912]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -48.0
+offset_right = 104.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "点击选择图片"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RRTypeOption" type="GridContainer" parent="Scroll" unique_id=1876659732]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="RRTONone" type="Button" parent="Scroll/RRTypeOption" unique_id=2125387103]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "无"
+
+[node name="RRTOSquare" type="Button" parent="Scroll/RRTypeOption" unique_id=672512446]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "方形"
+
+[node name="RRTOCard" type="Button" parent="Scroll/RRTypeOption" unique_id=1601862296]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "卡片"
+
+[node name="SizeChangeOption" type="VBoxContainer" parent="Scroll" unique_id=29911163]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Scroll/SizeChangeOption" unique_id=1589177117]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "偏移"
+
+[node name="Offset" type="HBoxContainer" parent="Scroll/SizeChangeOption" unique_id=51086519]
+layout_mode = 2
+
+[node name="X" type="SpinBox" parent="Scroll/SizeChangeOption/Offset" unique_id=175112020]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -10000.0
+max_value = 10000.0
+prefix = "X"
+
+[node name="Y" type="SpinBox" parent="Scroll/SizeChangeOption/Offset" unique_id=1754020621]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -10000.0
+prefix = "Y"
+
+[node name="Label2" type="Label" parent="Scroll/SizeChangeOption" unique_id=2074588241]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "缩放"
+
+[node name="Scale" type="HBoxContainer" parent="Scroll/SizeChangeOption" unique_id=206572823]
+layout_mode = 2
+
+[node name="X" type="SpinBox" parent="Scroll/SizeChangeOption/Scale" unique_id=433141217]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10000.0
+step = 0.01
+value = 1.0
+prefix = "X"
+
+[node name="Y" type="SpinBox" parent="Scroll/SizeChangeOption/Scale" unique_id=240139778]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10000.0
+step = 0.01
+value = 1.0
+prefix = "Y"
+
+[node name="Label3" type="Label" parent="Scroll/SizeChangeOption" unique_id=1252023079]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "旋转"
+
+[node name="Rotation" type="SpinBox" parent="Scroll/SizeChangeOption" unique_id=874176386]
+layout_mode = 2
+min_value = -1000.0
+max_value = 1000.0
+step = 0.1
+suffix = "°"
+
+[node name="Option" type="OptionButton" parent="." unique_id=1800996598]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 296.0
+offset_right = 160.0
+offset_bottom = 344.0
+selected = 0
+item_count = 1
+popup/item_0/text = "图层1"
+popup/item_0/id = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1259717657]
+visible = false
+layout_mode = 0
+offset_left = 168.0
+offset_top = 296.0
+offset_right = 520.0
+offset_bottom = 344.0
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1956128509]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "新建"
+
+[node name="Button3" type="Button" parent="HBoxContainer" unique_id=1006910054]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "删除"
+
+[node name="Button4" type="Button" parent="HBoxContainer" unique_id=1881924884]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "上移"
+
+[node name="Button5" type="Button" parent="HBoxContainer" unique_id=114880941]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "下移"
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1513101283]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+size = Vector2i(620, 720)
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.jpg", "*.png", "*.jpeg")
+use_native_dialog = true
+folder_creation_enabled = false
+favorites_enabled = false
+recent_list_enabled = false
+
+[node name="GetGalleryImage" parent="." unique_id=1837562103 instance=ExtResource("2_sfwrq")]
+
+[connection signal="pressed" from="Options/ImageChoose" to="." method="_on_image_choose_pressed"]
+[connection signal="pressed" from="Options/RRType" to="." method="_on_rr_type_pressed"]
+[connection signal="pressed" from="Options/SizeChange" to="." method="_on_size_change_pressed"]
+[connection signal="pressed" from="Scroll/ImageChooseOption" to="." method="_on_image_choose_option_pressed"]
+[connection signal="pressed" from="Scroll/RRTypeOption/RRTONone" to="." method="_on_rrto_none_pressed"]
+[connection signal="pressed" from="Scroll/RRTypeOption/RRTOSquare" to="." method="_on_rrto_square_pressed"]
+[connection signal="pressed" from="Scroll/RRTypeOption/RRTOCard" to="." method="_on_rrto_card_pressed"]
+[connection signal="value_changed" from="Scroll/SizeChangeOption/Offset/X" to="." method="_on_offset_x_changed"]
+[connection signal="value_changed" from="Scroll/SizeChangeOption/Offset/Y" to="." method="_on_offset_y_changed"]
+[connection signal="value_changed" from="Scroll/SizeChangeOption/Scale/X" to="." method="_on_scale_x_changed"]
+[connection signal="value_changed" from="Scroll/SizeChangeOption/Scale/Y" to="." method="_on_scale_y_changed"]
+[connection signal="value_changed" from="Scroll/SizeChangeOption/Rotation" to="." method="_on_rotation_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

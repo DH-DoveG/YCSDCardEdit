@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cmigydmvlir8y"]
+
+[ext_resource type="Script" uid="uid://bxbqtc3idymml" path="res://scenes/text_mul_box.gd" id="1_l7i4j"]
+[ext_resource type="PackedScene" uid="uid://bpqdigr683rof" path="res://components/ct_options/number_box.tscn" id="1_tn76d"]
+
+[node name="CardEffect" type="VBoxContainer" unique_id=1737782001]
+offset_right = 528.0
+offset_bottom = 409.0
+script = ExtResource("1_l7i4j")
+
+[node name="Label" type="Label" parent="." unique_id=554830401]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "效   果"
+
+[node name="EffectSize" parent="." unique_id=777352347 instance=ExtResource("1_tn76d")]
+layout_mode = 2
+title = "字体大小"
+number = 28
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1547499671]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+context_menu_enabled = false
+shortcut_keys_enabled = false
+wrap_mode = 1

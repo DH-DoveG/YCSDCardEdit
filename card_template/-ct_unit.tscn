@@ -1,0 +1,566 @@
+[gd_scene format=3 uid="uid://c70mg2wowishc"]
+
+[ext_resource type="Texture2D" uid="uid://d03yxs8gpoqnh" path="res://assets/card_template/英精时代-空-模板-精灵.png" id="1_jb2pg"]
+[ext_resource type="Script" uid="uid://cona6mhtxn6il" path="res://card_template/ct_other.gd" id="2_pb6ir"]
+[ext_resource type="Script" uid="uid://bttgnk3bb2a8i" path="res://addons/font_auto_size_labels/auto_size_label.gd" id="3_qburo"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="4_8ctqd"]
+[ext_resource type="Texture2D" uid="uid://cgvmc7e1rptb" path="res://assets/三角形.png" id="4_pb6ir"]
+
+[node name="CTUnit" type="TextureRect" unique_id=960412187]
+custom_minimum_size = Vector2(540, 756)
+clip_contents = true
+offset_right = 540.0
+offset_bottom = 756.0
+texture = ExtResource("1_jb2pg")
+expand_mode = 1
+script = ExtResource("2_pb6ir")
+
+[node name="CardBackground" type="ColorRect" parent="." unique_id=522744257]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+
+[node name="CardImageStack" type="Control" parent="." unique_id=2042568874]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardName" type="Label" parent="." unique_id=759776783]
+custom_minimum_size = Vector2(240, 40)
+custom_maximum_size = Vector2(240, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 48.0
+offset_right = 116.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 1
+script = ExtResource("3_qburo")
+_max_size = 28
+_current_font_size = 28
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardType" type="Label" parent="." unique_id=547553440]
+custom_minimum_size = Vector2(106, 39)
+custom_maximum_size = Vector2(106, 39)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 109.0
+offset_bottom = 86.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 24
+theme_override_font_sizes/font_size = 29
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 227
+clip_text = true
+text_overrun_behavior = 2
+script = ExtResource("3_qburo")
+_current_font_size = 29
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardLv" type="Label" parent="." unique_id=139375550]
+custom_minimum_size = Vector2(80, 66)
+custom_maximum_size = Vector2(80, 66)
+layout_mode = 1
+offset_left = 27.0
+offset_top = 28.0
+offset_right = 107.0
+offset_bottom = 94.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 24
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("3_qburo")
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardTagSlot1" type="Label" parent="." unique_id=1694172600]
+custom_minimum_size = Vector2(112, 22)
+custom_maximum_size = Vector2(112, 22)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 31.0
+offset_right = -12.0
+offset_bottom = 47.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 6
+script = ExtResource("3_qburo")
+_max_size = 16
+_current_font_size = 16
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardTagSlot2" type="Label" parent="." unique_id=1897057325]
+custom_minimum_size = Vector2(112, 22)
+custom_maximum_size = Vector2(112, 22)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 62.0
+offset_right = -28.0
+offset_bottom = 78.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("3_qburo")
+_max_size = 16
+_current_font_size = 16
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="Unit" type="Control" parent="." unique_id=1904036026]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AP" type="Label" parent="Unit" unique_id=897539247]
+custom_minimum_size = Vector2(65, 73)
+custom_maximum_size = Vector2(65, 73)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -77.0
+offset_right = 100.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 54
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DP" type="Label" parent="Unit" unique_id=9669074]
+custom_minimum_size = Vector2(65, 73)
+custom_maximum_size = Vector2(65, 73)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 111.0
+offset_top = -77.0
+offset_right = 176.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 54
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("3_qburo")
+_current_font_size = 54
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="SP" type="Label" parent="Unit" unique_id=895785594]
+custom_minimum_size = Vector2(65, 73)
+custom_maximum_size = Vector2(65, 73)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 189.0
+offset_top = -77.0
+offset_right = 254.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 54
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttackGC" type="GridContainer" parent="Unit" unique_id=1852612162]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.711
+anchor_top = 0.786
+anchor_right = 0.933
+anchor_bottom = 0.94400007
+offset_left = -0.94000244
+offset_top = -0.21600342
+offset_right = -0.8200073
+offset_bottom = 0.3359375
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="None" type="ColorRect" parent="Unit/AttackGC" unique_id=1821334752]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="None2" type="ColorRect" parent="Unit/AttackGC" unique_id=1333216549]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect3" type="ColorRect" parent="Unit/AttackGC" unique_id=416687094]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect3" unique_id=951641799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="None3" type="ColorRect" parent="Unit/AttackGC" unique_id=672424799]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="None4" type="ColorRect" parent="Unit/AttackGC" unique_id=722935762]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="None5" type="ColorRect" parent="Unit/AttackGC" unique_id=1346039323]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect7" type="ColorRect" parent="Unit/AttackGC" unique_id=1501011833]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect7" unique_id=239615744]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="ColorRect8" type="ColorRect" parent="Unit/AttackGC" unique_id=940230565]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect8" unique_id=576143282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="ColorRect9" type="ColorRect" parent="Unit/AttackGC" unique_id=1205761894]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect9" unique_id=1691784151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="None6" type="ColorRect" parent="Unit/AttackGC" unique_id=1997230519]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect11" type="ColorRect" parent="Unit/AttackGC" unique_id=1651275792]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect11" unique_id=1414041552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="ColorRect12" type="ColorRect" parent="Unit/AttackGC" unique_id=1761152059]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect12" unique_id=254628354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="ColorRect13" type="ColorRect" parent="Unit/AttackGC" unique_id=548523675]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect13" unique_id=299589697]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="ColorRect14" type="ColorRect" parent="Unit/AttackGC" unique_id=1726322408]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 0, 0, 0.5254902)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect14" unique_id=33186821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="TextureRect" type="TextureRect" parent="Unit/AttackGC/ColorRect14" unique_id=1030425933]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pb6ir")
+expand_mode = 1
+
+[node name="ColorRect15" type="ColorRect" parent="Unit/AttackGC" unique_id=384109230]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect15" unique_id=1952770045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="None7" type="ColorRect" parent="Unit/AttackGC" unique_id=1292734304]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect17" type="ColorRect" parent="Unit/AttackGC" unique_id=2130628988]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect17" unique_id=154071911]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="ColorRect18" type="ColorRect" parent="Unit/AttackGC" unique_id=287115253]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect18" unique_id=833639143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="ColorRect19" type="ColorRect" parent="Unit/AttackGC" unique_id=1619753930]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect19" unique_id=2112569086]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="None8" type="ColorRect" parent="Unit/AttackGC" unique_id=1029135524]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="None9" type="ColorRect" parent="Unit/AttackGC" unique_id=1193934506]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="None10" type="ColorRect" parent="Unit/AttackGC" unique_id=771131651]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect23" type="ColorRect" parent="Unit/AttackGC" unique_id=1079890071]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Unit/AttackGC/ColorRect23" unique_id=936683812]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.13636157, 9.400537e-08, 1.8049032e-08, 1)
+editor_only = false
+
+[node name="None11" type="ColorRect" parent="Unit/AttackGC" unique_id=78276436]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="None12" type="ColorRect" parent="Unit/AttackGC" unique_id=324678005]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="CardEffect" type="RichTextLabel" parent="." unique_id=1938266395]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 491.0
+offset_right = 518.0
+offset_bottom = 672.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+scroll_active = false
+script = ExtResource("4_8ctqd")
+_max_size = 24
+_current_font_size = 24
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="CardIcon" type="TextureRect" parent="." unique_id=973769121]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 112.0
+offset_right = 78.0
+offset_bottom = 144.0
+expand_mode = 1

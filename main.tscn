@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://t4rpy2e720xj"]
+
+[ext_resource type="Script" uid="uid://qxpth3tunkgb" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://4wwxe5oap0p6" path="res://card_template/ct_other.tscn" id="3_5vw27"]
+[ext_resource type="Texture2D" uid="uid://bcduexgpwn77l" path="res://assets/icons/save.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cajx7hafjj3lk" path="res://assets/icons/saveAs.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://cocibpbl1oqkp" path="res://assets/icons/tableRows.png" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://diww4f0f34w2x" path="res://scenes/card_info_panel.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cbl6b321h6pp5" path="res://scenes/sidebar.tscn" id="8_kek77"]
+
+[node name="Main" type="Control" unique_id=1625820491]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1653971278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.23529412, 0.3254902, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=917457626]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+color = Color(0.62352943, 0.34117648, 0.18039216, 1)
+
+[node name="Version" type="Label" parent="ColorRect" unique_id=1587965727]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "V0.0.2
+Beta 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardManager" type="Control" parent="." unique_id=823271934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Mount" type="Control" parent="CardManager" unique_id=265449932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CTOther" parent="CardManager/Mount" unique_id=960412187 instance=ExtResource("3_5vw27")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.0
+offset_top = 97.0
+offset_right = 270.0
+offset_bottom = 853.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Info" type="RichTextLabel" parent="CardManager" unique_id=1973593956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 920.0
+offset_right = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 24
+text = "卡名：_
+种类：_
+
+
+
+
+缺陷反馈：3490484430@qq.com"
+
+[node name="FileName" type="Label" parent="CardManager" unique_id=1271107704]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 864.0
+offset_bottom = 897.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "——————————————————————————————————————————"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopMenu" type="ColorRect" parent="." unique_id=1397800604]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+color = Color(9.62615e-07, 0.35281184, 0.47952133, 1)
+
+[node name="HBox" type="HBoxContainer" parent="TopMenu" unique_id=2127189536]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="TopMenu/HBox" unique_id=1299655087]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_1bvp3")
+
+[node name="TextureRect2" type="TextureRect" parent="TopMenu/HBox" unique_id=2047252393]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_lquwl")
+
+[node name="TextureRect3" type="TextureRect" parent="TopMenu/HBox" unique_id=1012615302]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("6_7mycd")
+
+[node name="CardInfoPanel" parent="." unique_id=1619048274 instance=ExtResource("7_5vw27")]
+layout_mode = 1
+anchors_preset = 15
+offset_top = 1152.0
+offset_bottom = 928.0
+grow_vertical = 2
+
+[node name="Sidebar" parent="." unique_id=181068782 instance=ExtResource("8_kek77")]
+layout_mode = 1
+offset_left = -424.0
+offset_right = 0.0

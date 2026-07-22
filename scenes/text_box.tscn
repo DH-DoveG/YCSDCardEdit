@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://1vbjo2fkdjd7"]
+
+[ext_resource type="Script" uid="uid://bkpkkllwkbsbc" path="res://scenes/text_box.gd" id="1_wscpg"]
+
+[node name="TextBox" type="HBoxContainer" unique_id=1218282564]
+offset_right = 528.0
+offset_bottom = 41.0
+theme_override_constants/separation = 16
+script = ExtResource("1_wscpg")
+
+[node name="Label" type="Label" parent="." unique_id=655439524]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "卡   名"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=29061053]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+clear_button_enabled = true

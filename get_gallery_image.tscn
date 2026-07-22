@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bodrmog7eial4"]
+
+[ext_resource type="Script" uid="uid://d0vqx6dh2vxy3" path="res://get_gallery_image.gd" id="1_6ry0j"]
+
+[node name="GetGalleryImage" type="Node" unique_id=1837562103]
+script = ExtResource("1_6ry0j")

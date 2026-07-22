@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bpqdigr683rof"]
+
+[ext_resource type="Script" uid="uid://baxglmrgmyp1l" path="res://components/ct_options/number_box.gd" id="1_o7vx2"]
+
+[node name="CardLv" type="HBoxContainer" unique_id=777352347]
+custom_minimum_size = Vector2(0, 48)
+offset_right = 528.0
+offset_bottom = 48.0
+theme_override_constants/separation = 16
+script = ExtResource("1_o7vx2")
+font_size = 30
+
+[node name="Label" type="Label" parent="." unique_id=848527630]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "等   级"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="SpinBox" parent="." unique_id=1546538157]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 255.0

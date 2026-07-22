@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://4wwxe5oap0p6"]
+
+[ext_resource type="Texture2D" uid="uid://cwj0x144avugr" path="res://assets/card_template/英精时代-空-模板-其他.png" id="1_q78fg"]
+[ext_resource type="Script" uid="uid://cona6mhtxn6il" path="res://card_template/ct_other.gd" id="2_2cl22"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="4_2cl22"]
+[ext_resource type="Script" uid="uid://bttgnk3bb2a8i" path="res://addons/font_auto_size_labels/auto_size_label.gd" id="4_3mieg"]
+
+[node name="CTOther" type="TextureRect" unique_id=960412187]
+custom_minimum_size = Vector2(540, 756)
+custom_maximum_size = Vector2(540, 756)
+clip_contents = true
+offset_right = 540.0
+offset_bottom = 756.0
+texture = ExtResource("1_q78fg")
+expand_mode = 1
+script = ExtResource("2_2cl22")
+
+[node name="CardBackground" type="ColorRect" parent="." unique_id=522744257]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+
+[node name="CardImageStack" type="Control" parent="." unique_id=2042568874]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Template" type="TextureRect" parent="CardImageStack" unique_id=9546668]
+custom_minimum_size = Vector2(1758, 845)
+custom_maximum_size = Vector2(1758, 845)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -879.0
+offset_top = -422.5
+offset_right = 879.0
+offset_bottom = 422.5
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CardName" type="Label" parent="." unique_id=907913885]
+custom_minimum_size = Vector2(240, 40)
+custom_maximum_size = Vector2(240, 40)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 146.0
+offset_top = 46.0
+offset_right = 386.0
+offset_bottom = 86.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 24
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 227
+clip_text = true
+text_overrun_behavior = 2
+script = ExtResource("4_3mieg")
+_current_font_size = 30
+_size_just_modified_by_autosizer = true
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardType" type="Label" parent="." unique_id=547553440]
+custom_minimum_size = Vector2(106, 39)
+custom_maximum_size = Vector2(106, 39)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 109.0
+offset_bottom = 86.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 24
+theme_override_font_sizes/font_size = 29
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 227
+clip_text = true
+text_overrun_behavior = 2
+script = ExtResource("4_3mieg")
+_current_font_size = 29
+_size_just_modified_by_autosizer = true
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardLv" type="Label" parent="." unique_id=139375550]
+custom_minimum_size = Vector2(80, 66)
+custom_maximum_size = Vector2(80, 66)
+layout_mode = 1
+offset_left = 27.0
+offset_top = 28.0
+offset_right = 107.0
+offset_bottom = 94.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 24
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("4_3mieg")
+_current_font_size = 50
+_size_just_modified_by_autosizer = true
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardTagSlot1" type="Label" parent="." unique_id=1694172600]
+custom_minimum_size = Vector2(112, 25)
+custom_maximum_size = Vector2(112, 25)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 31.0
+offset_right = -12.0
+offset_bottom = 47.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("4_3mieg")
+_current_font_size = 18
+_size_just_modified_by_autosizer = true
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardTagSlot2" type="Label" parent="." unique_id=1897057325]
+custom_minimum_size = Vector2(112, 25)
+custom_maximum_size = Vector2(112, 25)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 59.0
+offset_right = -28.0
+offset_bottom = 81.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("4_3mieg")
+_current_font_size = 18
+_size_just_modified_by_autosizer = true
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardName2" type="Label" parent="." unique_id=212602201]
+visible = false
+custom_minimum_size = Vector2(112, 0)
+custom_maximum_size = Vector2(112, -1)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 416.0
+offset_top = 21.0
+offset_right = 528.0
+offset_bottom = 46.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 24
+theme_override_font_sizes/font_size = 18
+text = "卡名"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 227
+clip_text = true
+text_overrun_behavior = 2
+script = ExtResource("4_3mieg")
+_current_font_size = 18
+_size_just_modified_by_autosizer = true
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="CardEffect" type="RichTextLabel" parent="." unique_id=405649338]
+custom_minimum_size = Vector2(494, 242)
+custom_maximum_size = Vector2(494, 242)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.64900005
+anchor_right = 0.95900005
+anchor_bottom = 0.97
+offset_left = 0.8599987
+offset_top = 0.35595703
+offset_right = -0.8600464
+offset_bottom = -0.32000732
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/normal_font_size = 28
+scroll_active = false
+shortcut_keys_enabled = false
+script = ExtResource("4_2cl22")
+_max_size = 28
+_current_font_size = 28
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="CardIcon" type="TextureRect" parent="." unique_id=973769121]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 112.0
+offset_right = 78.0
+offset_bottom = 144.0
+expand_mode = 1

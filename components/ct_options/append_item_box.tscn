@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://boa1by07nnbs1"]
+
+[ext_resource type="Texture2D" uid="uid://dgm5eo3l287j4" path="res://assets/icons/add.png" id="1_gv7jx"]
+[ext_resource type="Script" uid="uid://cc7rb0wt1md23" path="res://components/ct_options/append_item_box.gd" id="1_pkcxe"]
+[ext_resource type="Texture2D" uid="uid://b4n2bm7e5sv4u" path="res://assets/icons/close.png" id="2_ohvvw"]
+
+[node name="AppendItemBox" type="VBoxContainer" unique_id=1327639209]
+offset_right = 528.0
+offset_bottom = 89.0
+theme_override_constants/separation = 8
+script = ExtResource("1_pkcxe")
+
+[node name="Title" type="Label" parent="." unique_id=2024771182]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="Item" type="HBoxContainer" parent="." unique_id=2087812325]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Remove" type="TextureButton" parent="Item" unique_id=320834822]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture_normal = ExtResource("2_ohvvw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LineEdit" type="LineEdit" parent="Item" unique_id=356530996]
+custom_maximum_size = Vector2(-1, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+placeholder_text = "请送入特征"
+alignment = 1
+
+[node name="Grid" type="GridContainer" parent="." unique_id=1075049562]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="AddTag" type="TextureButton" parent="Grid" unique_id=148930904]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Back" type="ColorRect" parent="Grid/AddTag" unique_id=439827600]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.46618086, 0.4661808, 0.4661808, 1)
+
+[node name="Icon" type="TextureRect" parent="Grid/AddTag" unique_id=1139653785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gv7jx")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="Grid/AddTag" to="." method="_on_add_tag_pressed"]
