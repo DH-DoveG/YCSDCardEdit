@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cmigydmvlir8y" path="res://scenes/text_mul_box.tscn" id="4_nup68"]
 
 [node name="Control" type="VBoxContainer" unique_id=1976865191]
-custom_minimum_size = Vector2(528, 1400)
+custom_minimum_size = Vector2(528, 1856)
 custom_maximum_size = Vector2(528, -1)
 offset_right = 528.0
-offset_bottom = 1400.0
+offset_bottom = 1856.0
 script = ExtResource("1_i3bde")
 
 [node name="CardBase" type="VBoxContainer" parent="." unique_id=242937272]

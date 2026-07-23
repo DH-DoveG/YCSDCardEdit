@@ -24,3 +24,18 @@ func get_data():
 		"unit_attack_range": $GridRange.get_data()
 	}
 	return data
+
+
+func set_data(data):
+	$CardBase/CardType/LineEdit.selected = 0
+	#$CardBase/CardType/LineEdit.selected = data["type"]
+	$CardBase/CardName.set_data(data["name"])
+	$CardBase/CardLv.set_data(data["lv"])
+	$CardBase/CardTagSlot1.set_data(data["tag_slot1"])
+	$CardBase/CardTagSlot2.set_data(data["tag_slot2"])
+	$CardBase/CardEffect.set_data({ "size": data["effect_size"], "text": data["effect"] })
+	$CardBase/CardImage.set_data(data["image"])
+	$AP.set_data(data["unit_ap"])
+	$DP.set_data(data["unit_dp"])
+	$SP.set_data(data["unit_sp"])
+	$GridRange.set_data(data["unit_attack_range"])

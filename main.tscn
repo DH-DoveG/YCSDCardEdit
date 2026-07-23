@@ -44,7 +44,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 14
-text = "V0.0.2
+text = "V0.0.3
 Beta 1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -80,26 +80,6 @@ offset_bottom = 853.0
 grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="Info" type="RichTextLabel" parent="CardManager" unique_id=1973593956]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = 920.0
-offset_right = -72.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 24
-text = "卡名：_
-种类：_
-
-
-
-
-缺陷反馈：3490484430@qq.com"
-
 [node name="FileName" type="Label" parent="CardManager" unique_id=1271107704]
 layout_mode = 1
 anchors_preset = 10
@@ -112,6 +92,41 @@ theme_override_font_sizes/font_size = 24
 text = "——————————————————————————————————————————"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="InfoScroll" type="ScrollContainer" parent="CardManager" unique_id=356311730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 904.0
+offset_right = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Info" type="RichTextLabel" parent="CardManager/InfoScroll" unique_id=1973593956]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[b]v0.0.3 更新日志 2026.07.23[/b]
+1. 增加了【保存文件】与【打开文件】的功能（对 .ycc 文件）
+2. 导入文件处添加了对 png 与 jpg 文件的区分处理。两者都可以导入 png 或 jpg 的文件，但 jpg 选项处理更快，而 png 将保留文件的透明度信息。
+3. 现在等级、AP、DP、SP也可以输入数字外的文本
+
+[b]v0.0.2 更新日志 2026.07.22[/b]
+1. 增加了对精灵卡的编辑的功能
+2. 现在可以从相册里选图片了
+
+[b]v0.0.1 更新日志 2026.07.21[/b]
+1. 支持对战术卡、场地卡、装备卡的编辑
+2. 可以从系统文件中选择图片
+3. 可以导出图片
+
+缺陷反馈：3490484430@qq.com"
 
 [node name="TopMenu" type="ColorRect" parent="." unique_id=1397800604]
 visible = false

@@ -4,6 +4,10 @@ extends ColorRect
 #signal sidebar_export_card
 
 
+func set_data(data):
+	pass
+
+
 var sidebar_status = false
 func _on_btn_pressed() -> void:
 	sidebar_status = not sidebar_status
@@ -35,9 +39,9 @@ func _on_save_pressed() -> void:
 	if get_parent().get_node("./CardManager/Mount").get_child(0).idata == null:
 		ToastX.error("没有可保存的内容")
 		return
-	if not Config.current_open_file.is_empty():
-		save_ycc(Config.current_open_file)
-		return
+	#if not Config.current_open_file.is_empty():
+		#save_ycc(Config.current_open_file)
+		#return
 	$SaveYCC.popup_centered()
 
 
@@ -114,7 +118,10 @@ func _on_open_ycc_file_selected(path: String) -> void:
 	for image in config["image"]:
 		var obj = Image.new()
 		var img = reader.read_file("images".path_join(image["obj"]))
-		obj.load_png_from_buffer(img)
+		if image["obj"].ends_with(".jpg"):
+			obj.load_jpg_from_buffer(img)
+		if image["obj"].ends_with(".png"):
+			obj.load_png_from_buffer(img)
 		image["obj"] = obj
 	
 	#Config.current_ct_updated.emit(config)
@@ -122,7 +129,7 @@ func _on_open_ycc_file_selected(path: String) -> void:
 	Config.ct_update(config)
 
 #问题：导出的图片保存，序列化总是错误
-var id = -1
+#var id = -1
 func _on_save_ycc_confirmed() -> void:
 	var filename = $SaveYCC/Control/LineEdit.text + ".ycc"
 	save_ycc(filename)
@@ -137,15 +144,39 @@ func save_ycc(filename: String):
 	if FileAccess.file_exists(full_filename):
 		pass
 
-	var data = get_parent().get_node("./CardManager/Mount").get_child(0).idata
+	var data = get_parent().get_node("./CardManager/Mount").get_child(0).idata.duplicate_deep()
 	# [  { "obj": IMAGE RESOURCE, "scale": Vector2, "offset": Vector2, "rotation": float }  ]
 	var images = [] # [ { "buffer": [], "name": "" } ]
 	for image in data["image"]:
-		var n = str(images.size()) + ".png"
+		var format = ".png" #str(images.size()) + ".png"
+		
+		#var img = Image.new()
+		#var img_buffer = image["obj"].get_data()
+		# Use load format depending what you have set in plugin setOption()
+		#var error = image.load_jpg_from_buffer(img_buffer)
+		#var error = img.load_png_from_buffer(img_buffer)
+		#print("get gallery image ERROR: ", error)
+		#if error != OK:
+			#print("Not is PNG: ", error)
+			#error = img.load_jpg_from_buffer(img_buffer)
+			#if error != OK:
+				#print("Not is JPG")
+				#format = ".jpg"
+		#else:
+			#format = ".png"
+		
+		var n = str(images.size()) + format
+		#if format == ".png":
 		images.append({
 			"buffer": image["obj"].save_png_to_buffer(),
 			"name": n
 		})
+		#else:
+			#n = str(images.size()) + format
+			#images.append({
+				#"buffer": image["obj"].save_jpg_to_buffer(),
+				#"name": n
+			#})
 		image["obj"] = n
 	
 	var writer := ZIPPacker.new()

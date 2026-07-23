@@ -92,6 +92,7 @@ theme_override_font_sizes/font_size = 22
 text = "图像选择"
 
 [node name="RRType" type="Button" parent="Options" unique_id=1939532980]
+visible = false
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 size_flags_vertical = 3
@@ -118,31 +119,85 @@ offset_right = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="ImageChooseOption" type="TextureButton" parent="Scroll" unique_id=1054606695]
+[node name="ImageChooseOption" type="TextureRect" parent="Scroll" unique_id=210868539]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-ignore_texture_size = true
+expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Scroll/ImageChooseOption" unique_id=1800910912]
+[node name="HBox" type="HBoxContainer" parent="Scroll/ImageChooseOption" unique_id=273127804]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -104.0
-offset_top = -48.0
-offset_right = 104.0
-offset_bottom = 48.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "点击选择图片"
+
+[node name="JPG" type="TextureButton" parent="Scroll/ImageChooseOption/HBox" unique_id=332781191]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Scroll/ImageChooseOption/HBox/JPG" unique_id=415058306]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "JPG"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Scroll/ImageChooseOption/HBox/JPG" unique_id=1973472631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(1, 1, 1, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="PNG" type="TextureButton" parent="Scroll/ImageChooseOption/HBox" unique_id=1513102208]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Scroll/ImageChooseOption/HBox/PNG" unique_id=1857635770]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "PNG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="Scroll/ImageChooseOption/HBox/PNG" unique_id=864270121]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0, 0.63949513, 0.35015422, 1)
+border_width = 2.0
+editor_only = false
 
 [node name="RRTypeOption" type="GridContainer" parent="Scroll" unique_id=1876659732]
 visible = false
@@ -289,7 +344,8 @@ recent_list_enabled = false
 [connection signal="pressed" from="Options/ImageChoose" to="." method="_on_image_choose_pressed"]
 [connection signal="pressed" from="Options/RRType" to="." method="_on_rr_type_pressed"]
 [connection signal="pressed" from="Options/SizeChange" to="." method="_on_size_change_pressed"]
-[connection signal="pressed" from="Scroll/ImageChooseOption" to="." method="_on_image_choose_option_pressed"]
+[connection signal="pressed" from="Scroll/ImageChooseOption/HBox/JPG" to="." method="_on_jpg_pressed"]
+[connection signal="pressed" from="Scroll/ImageChooseOption/HBox/PNG" to="." method="_on_png_pressed"]
 [connection signal="pressed" from="Scroll/RRTypeOption/RRTONone" to="." method="_on_rrto_none_pressed"]
 [connection signal="pressed" from="Scroll/RRTypeOption/RRTOSquare" to="." method="_on_rrto_square_pressed"]
 [connection signal="pressed" from="Scroll/RRTypeOption/RRTOCard" to="." method="_on_rrto_card_pressed"]

@@ -32,11 +32,21 @@ func _on_btn_pressed() -> void:
 		tween.tween_property(self, "position:y", Config.real_size.y, 0.25)
 
 
-func update():
-	pass
+func set_data(data):
+	var cclass = data["card_class"]
+	$CardTypeChoose.selected = int(cclass)
+	_on_card_type_choose_item_selected(int(cclass))
+	# 设置值
+	get_tree().create_timer(0.5).timeout.connect(func():
+		$Scroll/M.get_child(0).set_data(data)
+		get_tree().create_timer(0.5).timeout.connect(func():
+			_on_used_change_pressed()
+		)
+	)
 
 
 func _on_card_type_choose_item_selected(index: int) -> void:
+	print("CTCIS: ", index)
 	match index:
 		0:
 			for node in $Scroll/M.get_children():

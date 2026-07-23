@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://ebnieopwmmi3" path="res://scenes/grid_range.tscn" id="5_lqyxg"]
 
 [node name="Control" type="VBoxContainer" unique_id=1976865191]
-custom_minimum_size = Vector2(528, 2368)
+custom_minimum_size = Vector2(528, 2504)
 custom_maximum_size = Vector2(528, -1)
 offset_right = 528.0
-offset_bottom = 2368.0
+offset_bottom = 2504.0
 theme_override_constants/separation = 16
 script = ExtResource("1_iid73")
 

@@ -9,6 +9,10 @@ extends VBoxContainer
 
 
 func _on_add_tag_pressed() -> void:
+	add_tag()
+
+
+func add_tag(v = ""):
 	var grid = $Grid
 	
 	var item := HBoxContainer.new()
@@ -29,10 +33,11 @@ func _on_add_tag_pressed() -> void:
 	line.size_flags_horizontal = SizeFlags.SIZE_EXPAND_FILL
 	line.name = "LineEdit"
 	
+	line.text = v
+	
 	remove.pressed.connect(func():
 		item.queue_free()
 	)
-	
 	grid.move_child($Grid/AddTag, grid.get_child_count())
 
 
@@ -42,5 +47,17 @@ func get_data():
 	var data = []
 	for item in items:
 		data.append(item.get_node("LineEdit").text)
-	print("data: ", data)
 	return data
+
+
+func set_data(data):
+	#print("DATA : ", data)
+	for g in $Grid.get_children():
+		if g.name != "AddTag":
+			g.queue_free()
+	for d in data:
+		#_on_add_tag_pressed()
+		add_tag(d)
+		#var s = $Grid.get_children()
+		#var n = s[s.size() - 2]
+		#n.get_node("LineEdit").text = d

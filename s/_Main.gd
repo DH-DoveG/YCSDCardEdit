@@ -19,20 +19,20 @@ func _ready():
 		plugin.connect("image_request_completed", _on_image_request_completed)
 		plugin.connect("error", _on_error)
 		plugin.connect("permission_not_granted_by_user", _on_permission_not_granted_by_user)
-
-	var options = {
-		"image_height" : 10000,
-		"image_width" : 10000,
-		"keep_aspect" : true,
-		#"image_format" : "jpg"
-		"image_format" : "png"
-	}
-	
-	if plugin:
-		plugin.setOptions(options)
-		print("设置完成")
-	else:
-		print(plugin_name, " plugin not loaded!")
+#
+	#var options = {
+		##"image_height" : 10000,
+		##"image_width" : 10000,
+		#"keep_aspect" : true,
+		##"image_format" : "jpg"
+		#"image_format" : "png"
+	#}
+	#
+	#if plugin:
+		#plugin.setOptions(options)
+		#print("设置完成")
+	#else:
+		#print(plugin_name, " plugin not loaded!")
 
 
 	
@@ -62,16 +62,16 @@ func _on_image_request_completed(dict):
 	""" Returns Dictionary of PackedByteArray """
 	
 	# Purge old images
-	for n in get_node("VBoxContainer/Images").get_children():
-		n.queue_free()
+	#for n in get_node("VBoxContainer/Images").get_children():
+		#n.queue_free()
 	
 	# Prepare the GridContainer
-	if len(dict.values()) == 1:
-		# Single image is loaded
-		get_node("VBoxContainer/Images").columns = 1
-	else:
-		# Multiple images is loaded
-		get_node("VBoxContainer/Images").columns = 3
+	#if len(dict.values()) == 1:
+		## Single image is loaded
+		#get_node("VBoxContainer/Images").columns = 1
+	#else:
+		## Multiple images is loaded
+		#get_node("VBoxContainer/Images").columns = 3
 	
 	# Load all images
 	var count = 0
@@ -80,16 +80,30 @@ func _on_image_request_completed(dict):
 		var image = Image.new()
 		
 		# Use load format depending what you have set in plugin setOption()
-		var error = image.load_jpg_from_buffer(img_buffer)
-		#var error = image.load_png_from_buffer(img_buffer)
+		var error = image.load_png_from_buffer(img_buffer)
 		
 		if error != OK:
-			print("Error loading png/jpg buffer, ", error)
-		else:
-			print("We are now loading texture... ", count)
-			var image_node = TextureRect.new() #image_scene.instantiate()
-			image_node.texture = ImageTexture.new().create_from_image(image)
-			get_node("VBoxContainer/Images").add_child(image_node)
+			print("ERROR PNG ", error)
+			error = image.load_jpg_from_buffer(img_buffer)
+			print("ERROR JPG ", error)
+			if error != OK:
+				continue
+		
+		#var image_node = TextureRect.new() #image_scene.instantiate()
+		#image_node.texture = ImageTexture.new().create_from_image(image)
+		#get_node("VBoxContainer/Images/Image").add_child(image_node)
+		print("IMAGE: ", image)
+		$VBoxContainer/Image.texture = ImageTexture.create_from_image(image)
+		#get_node("./VBoxContainer/Image")
+		#var error = image.load_png_from_buffer(img_buffer)
+		
+		#if error != OK:
+			#print("Error loading png/jpg buffer, ", error)
+		#else:
+			#print("We are now loading texture... ", count)
+			#var image_node = TextureRect.new() #image_scene.instantiate()
+			#image_node.texture = ImageTexture.new().create_from_image(image)
+			#get_node("VBoxContainer/Images/Image").add_child(image_node)
 			
 			
 func _on_error(e):
@@ -113,9 +127,9 @@ func _on_ButtonSetOptions_pressed():
 	print("???")
 	""" Set option for all following images """
 	var options = {
-		"image_height" : 10000,
-		"image_width" : 10000,
-		"keep_aspect" : true,
+		#"image_height" : 10000,
+		#"image_width" : 10000,
+		#"keep_aspect" : true,
 		#"image_format" : "jpg"
 		"image_format" : "png"
 	}

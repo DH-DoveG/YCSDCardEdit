@@ -405,7 +405,7 @@ offset_right = -8.0
 offset_bottom = -448.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "保存的文件默认在：
+text = "保存的文件默认路径：
 Documents/YcsdCardEdit/CardSet/
 文件后缀：（暂定，本质zip）
 .ycc  (YCSD Card)"

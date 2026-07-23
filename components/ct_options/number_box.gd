@@ -23,3 +23,7 @@ extends HBoxContainer
 
 func get_data():
 	return $LineEdit.value
+
+
+func set_data(data):
+	number = data

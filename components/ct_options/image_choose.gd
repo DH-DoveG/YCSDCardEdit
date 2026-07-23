@@ -23,6 +23,8 @@ extends Control
 
 func get_data():
 	var images = []
+	if $"ImageStatck/1".texture == null:
+		return images
 	var img = $"ImageStatck/1".texture.get_image()
 	#var img_scale = Vector2($Scroll/SizeChangeOption/Scale/X.value, $Scroll/SizeChangeOption/Scale/Y.value)
 	#var img_offset = Vector2($Scroll/SizeChangeOption/Offset/X.value, $Scroll/SizeChangeOption/Offset/Y.value)
@@ -36,6 +38,15 @@ func get_data():
 	})
 	
 	return images
+
+
+func set_data(data):
+	for image in data:
+		$"ImageStatck/1".texture = ImageTexture.create_from_image(image["obj"])
+		#$"ImageStatck/1".scale = Vector2(image["scale"]["x"], image["scale"]["y"])
+		$Scroll/SizeChangeOption/Scale/X.value = image["scale"]["x"]
+		$Scroll/SizeChangeOption/Scale/Y.value = image["scale"]["y"]
+		$Scroll/SizeChangeOption/Rotation.value = image["rotation"]
 
 
 func _ready() -> void:
@@ -56,7 +67,7 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	#print(FileAccess.get_file_as_string(path))
 	#FileAccess.get_file_as_bytes(path)
 	$"ImageStatck/1".texture = t
-	$Scroll/ImageChooseOption.texture_normal = t
+	$Scroll/ImageChooseOption.texture = t
 	pass # Replace with function body.
 
 
@@ -123,13 +134,14 @@ func _on_size_change_pressed() -> void:
 	$Scroll/SizeChangeOption.show()
 
 
-func _on_image_choose_option_pressed() -> void:
+#func _on_image_choose_option_pressed() -> void:
 	#$FileDialog.popup_centered()
-	pass
-	$GetGalleryImage.get_gallery()
-	var images = await $GetGalleryImage.gallery_image_result
-	for image in images:
-		$"ImageStatck/1".texture = ImageTexture.create_from_image(image)
+	#pass
+	#$GetGalleryImage.get_gallery()
+	#var images = await $GetGalleryImage.gallery_image_result
+	#for image in images:
+		#$"ImageStatck/1".texture = ImageTexture.create_from_image(image)
+	#get_tree().change_scene_to_file("res://get_gallery_image.tscn")
 
 
 func _on_rrto_none_pressed() -> void:
@@ -165,3 +177,20 @@ func _on_scale_y_changed(value: float) -> void:
 
 func _on_rotation_changed(value: float) -> void:
 	$"ImageStatck/1".offset_transform_rotation = deg_to_rad(value)
+
+
+func _on_jpg_pressed() -> void:
+	$GetGalleryImage.set_option_jpg()
+	$GetGalleryImage.get_gallery()
+	$GetGalleryImage.gallery_image_result.connect(func(images, _format):
+		$"ImageStatck/1".texture = ImageTexture.create_from_image(images[0])
+		#$Scroll/ImageChooseOption.texture = ImageTexture.create_from_image(images[0])
+	)
+
+
+func _on_png_pressed() -> void:
+	$GetGalleryImage.set_option_png()
+	$GetGalleryImage.get_gallery()
+	$GetGalleryImage.gallery_image_result.connect(func(images, _format):
+		$"ImageStatck/1".texture = ImageTexture.create_from_image(images[0])
+	)

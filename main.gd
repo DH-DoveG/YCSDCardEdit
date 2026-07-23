@@ -30,8 +30,8 @@ func _ready() -> void:
 	#)
 	
 	$CardInfoPanel.position.y = size.y
-	$Sidebar.update()
-	$CardInfoPanel.update()
+	#$Sidebar.update()
+	#$CardInfoPanel.update()
 	
 	$CardInfoPanel.card_type_changed.connect(func(index):
 		match index:
@@ -79,5 +79,6 @@ func _process(delta: float) -> void:
 	position.y = h * Config.window_ratio * -1
 
 
-func show_card():
-	pass
+func set_data(data):
+	$Sidebar.set_data(data)
+	$CardInfoPanel.set_data(data)

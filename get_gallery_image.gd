@@ -5,6 +5,8 @@ var plugin_name = "GodotGetImage"
 
 signal gallery_image_result
 
+var format = ".jpg"
+
 #@onready var image_scene = preload("res://Image.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -15,26 +17,54 @@ func _ready():
 		print("Could not load plugin: ", plugin_name)
 
 	if plugin:
-		var options = {
+		#var options = {
+			###"image_height" : 200,
+			###"image_width" : 200,
+			###"image_quality": 100,
+			###"keep_aspect" : true,
+			###"image_format" : "jpg"
 			##"image_height" : 200,
-			##"image_width" : 200,
-			##"image_quality": 100,
-			##"keep_aspect" : true,
-			##"image_format" : "jpg"
-			#"image_height" : 200,
-			#"image_width" : 100,
-			"keep_aspect" : true,
-			"image_format" : "png"
-		}
+			##"image_width" : 100,
+			#"keep_aspect" : true,
+			#"image_format" : "png"
+		#}
 	#
 		#if plugin:
-		plugin.setOptions(options)
+		#plugin.setOptions(options)
 		#else:
 			#print(plugin_name, " plugin not loaded!")
 		
 		plugin.connect("image_request_completed", _on_image_request_completed)
 		plugin.connect("error", _on_error)
 		plugin.connect("permission_not_granted_by_user", _on_permission_not_granted_by_user)
+		
+		#get_gallery()
+
+
+func set_option_png():
+	var options = {
+		##"image_height" : 200,
+		##"image_width" : 200,
+		##"image_quality": 100,
+		##"keep_aspect" : true,
+		##"image_format" : "jpg"
+		#"image_height" : 200,
+		#"image_width" : 100,
+		"keep_aspect" : true,
+		"image_format" : "png"
+	}
+	format = ".png"
+	plugin.setOptions(options)
+
+
+func set_option_jpg():
+	var options = {
+		"keep_aspect" : true,
+		"image_format" : "jpg"
+	}
+	format = ".jpg"
+	plugin.setOptions(options)
+
 
 func get_gallery():
 	""" Select single images from gallery """
@@ -86,9 +116,9 @@ func _on_image_request_completed(dict):
 		#var error = image.load_jpg_from_buffer(img_buffer)
 		var error = image.load_png_from_buffer(img_buffer)
 		print("get gallery image ERROR: ", error)
-		#if error != OK:
-			#print("Not is PNG: ", error)
-			#error = image.load_jpg_from_buffer(img_buffer)
+		if error != OK:
+			print("Not is PNG: ", error)
+			error = image.load_jpg_from_buffer(img_buffer)
 		#
 		#if error != OK:
 			#print("Not is JPG: ", error)
@@ -103,7 +133,7 @@ func _on_image_request_completed(dict):
 			#images.append(image)
 		images.append(image)
 		#image.save_png("/storage/emulated/0/Documents/YcsdCardEdit/1.png")
-	gallery_image_result.emit(images)
+	gallery_image_result.emit(images, format)
 
 func _on_error(e):
 	var dialog = get_node("AcceptDialog")

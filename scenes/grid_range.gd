@@ -32,3 +32,14 @@ func get_data():
 		"size": $Range.number,
 		"grid": grids
 	}
+
+
+func set_data(data):
+	$Range.set_data(data["size"])
+	var i = 0
+	print("Range size: ", data["size"])
+	print("Range grid: ", data["grid"])
+	print("Range children: ", $Grid.get_children().size())
+	for item in $Grid.get_children():
+		item.set_data(data["grid"][i])
+		i += 1

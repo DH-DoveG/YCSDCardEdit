@@ -1,46 +1,41 @@
 extends TextureButton
 
-@export var value = 0:
+@export var value := 0:
 	set(v):
-		value = v
-		match v:
+		value = int(v)
+		match value:
 			0:
 				$WhiteBlock.hide()
 				$RedBlock.hide()
 				$HitBlock.hide()
 				$BlackBlock.hide()
-				pass
 			1:
 				$WhiteBlock.show()
 				$RedBlock.hide()
 				$HitBlock.hide()
 				$BlackBlock.hide()
-				pass
 			2:
 				$WhiteBlock.hide()
 				$RedBlock.show()
 				$HitBlock.hide()
 				$BlackBlock.hide()
-				pass
 			3:
 				$WhiteBlock.hide()
 				$RedBlock.hide()
 				$HitBlock.show()
 				$BlackBlock.hide()
-				pass
 			4:
 				$WhiteBlock.hide()
 				$RedBlock.hide()
 				$HitBlock.hide()
 				$BlackBlock.show()
-				pass
 
 func get_data():
 	return value
 
 
 func set_data(v):
-	value = v
+	value = int(v) % 5
 
 
 func _on_pressed() -> void:

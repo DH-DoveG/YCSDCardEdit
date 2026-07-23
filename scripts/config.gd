@@ -23,13 +23,13 @@ signal current_open_file_updated
 
 func ct_update(config):
 	print("CT UPDATE: ", config)
-	get_tree().current_scene.get_node("CardInfoPanel")._on_card_type_choose_item_selected(config["card_class"])
-	var id = ToastX.show_loading("正在读取文件")
-	get_tree().create_timer(1).timeout.connect(func():
-		ToastX.complete_loading(id)
-		ToastX.success("读取成功")
-		get_tree().current_scene.get_node("CardInfoPanel").card_used_changed.emit(config)
-	)
+	#get_tree().current_scene.get_node("CardInfoPanel")._on_card_type_choose_item_selected(config["card_class"])
+	#var id = ToastX.show_loading("正在读取文件")
+	#get_tree().create_timer(1).timeout.connect(func():
+		#ToastX.complete_loading(id)
+		#ToastX.success("读取成功")
+	get_tree().current_scene.set_data(config)
+	#)
 	#current_ct.set_data(config)
 
 
